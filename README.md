@@ -1,5 +1,5 @@
 # Bioinformatics-basics
-Codes for basic bioinformtaics analysis
+Codes for basic bioinformatics analysis
 
 ## Author
 Utsav Arandhara
