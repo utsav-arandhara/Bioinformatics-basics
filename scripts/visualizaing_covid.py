@@ -56,7 +56,7 @@ def get_mutations(initial, variant):
 # print(spikes)
 # Next step is to work with the proteins directly, but we need to get rid of all the gaps in the aligned file before we translate
 
-with open('datasets/spikes2.fasta', 'w', encoding="utf-8") as f:
+with open('D:/Private/Dihang/Bioinformatics/Bioinformatics-basics/Bioinformatics-basics/datasets/spikes2.fasta', 'w', encoding="utf-8") as f:
     for strain, spike in spikes.items():
         out = spike.replace('-','').translate()
         f.write('>' + strain + '\n')
@@ -89,11 +89,3 @@ print(len(get_spikepro_mutations(sp_align['Wuhan_strain'], sp_align['B.1.1.529|O
 print("Comparisons of AA changes wrt original Wuhan Strain")
 for item, seqs in sp_align.items():
     print(item + ':' + str(len(get_spikepro_mutations(sp_align['Wuhan_strain'], seqs))))
-
-# Plotting the changes
-
-for y, item in enumerate(sp_align):
-    plt.plot((0, len(sp_align['Wuhan_strain'])), (y,y), color = 'lightgray')
-plt.xlim(-150, len(sp_align['Wuhan_strain']) + 100)
-plt.ylim(-.75, 5.75)
-plt.show()
